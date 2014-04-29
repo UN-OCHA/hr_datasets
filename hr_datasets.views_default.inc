@@ -22,7 +22,6 @@ function hr_datasets_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Datasets';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -88,6 +87,12 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['arguments']['og_group_ref']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['og_group_ref']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['og_group_ref']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['og_group_ref']['validate']['type'] = 'node';
+  $handler->display->display_options['arguments']['og_group_ref']['validate_options']['types'] = array(
+    'hr_operation' => 'hr_operation',
+  );
+  $handler->display->display_options['arguments']['og_group_ref']['validate']['fail'] = 'ignore';
   $handler->display->display_options['arguments']['og_group_ref']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['og_group_ref']['not'] = 0;
   /* Filter criterion: Indexed Node: Content type */
@@ -97,6 +102,7 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['filters']['type']['value'] = array(
     'hr_dataset' => 'hr_dataset',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Indexed Node: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_node_index';
@@ -104,10 +110,12 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['filters']['status']['group'] = 1;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search Datasets';
@@ -141,7 +149,6 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['path'] = 'node/%/datasets';
   $translatables['hr_datasets'] = array(
     t('Master'),
-    t('Datasets'),
     t('more'),
     t('Apply'),
     t('Reset'),
