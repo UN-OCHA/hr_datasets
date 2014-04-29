@@ -8,12 +8,25 @@
  * Implements hook_ctools_plugin_api().
  */
 function hr_datasets_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
+  if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function hr_datasets_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -30,5 +43,21 @@ function hr_datasets_node_info() {
       'help' => t('Use this form to submit or edit a <strong>COD or FOD</strong> dataset.  The dataset must represent the "best-available" dataset which is agreed by the Information Management Working Group for the country or emergency.  More information on the <a href="/about">difference between CODs and FODs.</a>'),
     ),
   );
+  return $items;
+}
+
+/**
+ * Implements hook_default_search_api_autocomplete_search().
+ */
+function hr_datasets_default_search_api_autocomplete_search() {
+  $items = array();
+  $items['search_api_views_hr_datasets'] = entity_import('search_api_autocomplete_search', '{
+    "machine_name" : "search_api_views_hr_datasets",
+    "name" : "Datasets",
+    "index_id" : "default_node_index",
+    "type" : "search_api_views",
+    "enabled" : "1",
+    "options" : { "result count" : true, "fields" : [] }
+  }');
   return $items;
 }

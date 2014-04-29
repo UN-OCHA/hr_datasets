@@ -1,0 +1,83 @@
+<?php
+/**
+ * @file
+ * hr_datasets.context.inc
+ */
+
+/**
+ * Implements hook_context_default_contexts().
+ */
+function hr_datasets_context_default_contexts() {
+  $export = array();
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'hr_datasets_space';
+  $context->description = '';
+  $context->tag = 'Datasets';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'node/*/datasets' => 'node/*/datasets',
+        'node/*/datasets/*' => 'node/*/datasets/*',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-hr_datasets-list' => array(
+          'module' => 'views',
+          'delta' => '-exp-hr_datasets-list',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
+        'current_search-hr_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'hr_current_search',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'facetapi-SauzQhZGmFdDfgASiddEFOV7jbT0ifHu' => array(
+          'module' => 'facetapi',
+          'delta' => 'SauzQhZGmFdDfgASiddEFOV7jbT0ifHu',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'facetapi-j3HxiZwNJ4R0Ko07V311HTCBQ5Qhvsty' => array(
+          'module' => 'facetapi',
+          'delta' => 'j3HxiZwNJ4R0Ko07V311HTCBQ5Qhvsty',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+        'facetapi-Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh' => array(
+          'module' => 'facetapi',
+          'delta' => 'Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
+        'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
+          'module' => 'facetapi',
+          'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
+          'region' => 'sidebar_first',
+          'weight' => '-6',
+        ),
+        'mefibs-mefibs_hr_datasets--list--sorts' => array(
+          'module' => 'mefibs',
+          'delta' => 'mefibs_hr_datasets--list--sorts',
+          'region' => 'sidebar_first',
+          'weight' => '-5',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Datasets');
+  $export['hr_datasets_space'] = $context;
+
+  return $export;
+}
