@@ -17,10 +17,9 @@ function hr_datasets_context_default_contexts() {
   $context->description = '';
   $context->tag = 'Datasets';
   $context->conditions = array(
-    'path' => array(
+    'views' => array(
       'values' => array(
-        'node/*/datasets' => 'node/*/datasets',
-        'node/*/datasets/*' => 'node/*/datasets/*',
+        'hr_datasets:list' => 'hr_datasets:list',
       ),
     ),
   );
@@ -39,9 +38,9 @@ function hr_datasets_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'facetapi-SauzQhZGmFdDfgASiddEFOV7jbT0ifHu' => array(
+        'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
           'module' => 'facetapi',
-          'delta' => 'SauzQhZGmFdDfgASiddEFOV7jbT0ifHu',
+          'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
           'region' => 'sidebar_first',
           'weight' => '-9',
         ),
@@ -51,15 +50,15 @@ function hr_datasets_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-8',
         ),
-        'facetapi-Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh' => array(
+        'facetapi-SauzQhZGmFdDfgASiddEFOV7jbT0ifHu' => array(
           'module' => 'facetapi',
-          'delta' => 'Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh',
+          'delta' => 'SauzQhZGmFdDfgASiddEFOV7jbT0ifHu',
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
-        'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
+        'facetapi-Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh' => array(
           'module' => 'facetapi',
-          'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
+          'delta' => 'Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh',
           'region' => 'sidebar_first',
           'weight' => '-6',
         ),
