@@ -478,7 +478,7 @@ function hr_datasets_panelizer_defaults() {
   $panelizer->view_mode = 'search_result';
   $panelizer->css_class = '';
   $panelizer->title_element = 'H2';
-  $panelizer->link_to_entity = TRUE;
+  $panelizer->link_to_entity = FALSE;
   $panelizer->extra = array();
   $display = new panels_display();
   $display->layout = 'radix_taylor_flipped';
@@ -490,7 +490,26 @@ function hr_datasets_panelizer_defaults() {
       'quarter1' => NULL,
       'quarter2' => NULL,
       'half' => NULL,
-      'footer' => NULL,
+      'footer' => array(
+        'region_title' => 'View more',
+        'modifier_class' => 'panel-primary',
+        'collapsible' => 1,
+        'collapsed' => 1,
+        'hide_classes' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'additional_classes' => array(
+          'pull-left' => 0,
+          'pull-right' => 0,
+          'clearfix' => 0,
+        ),
+      ),
+    ),
+    'footer' => array(
+      'style' => 'bootstrap_styles:panel',
     ),
   );
   $display->cache = array();
@@ -586,6 +605,64 @@ function hr_datasets_panelizer_defaults() {
     $display->content['new-601e4a47-a3de-4891-a9f9-958d33721fc8'] = $pane;
     $display->panels['footer'][2] = 'new-601e4a47-a3de-4891-a9f9-958d33721fc8';
     $pane = new stdClass();
+    $pane->pid = 'new-0f52646b-5460-47b4-94ef-d54b54bf733e';
+    $pane->panel = 'footer';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_ds_recent_changes';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '0f52646b-5460-47b4-94ef-d54b54bf733e';
+    $display->content['new-0f52646b-5460-47b4-94ef-d54b54bf733e'] = $pane;
+    $display->panels['footer'][3] = 'new-0f52646b-5460-47b4-94ef-d54b54bf733e';
+    $pane = new stdClass();
+    $pane->pid = 'new-b4b20374-5ef9-43f9-8827-92eaae573f84';
+    $pane->panel = 'footer';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_email';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'email_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'panelizer',
+      'override_title' => 1,
+      'override_title_text' => 'Data Guardian',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'b4b20374-5ef9-43f9-8827-92eaae573f84';
+    $display->content['new-b4b20374-5ef9-43f9-8827-92eaae573f84'] = $pane;
+    $display->panels['footer'][4] = 'new-b4b20374-5ef9-43f9-8827-92eaae573f84';
+    $pane = new stdClass();
     $pane->pid = 'new-8e07fd9e-e8e8-4910-bbf9-67c4b711774b';
     $pane->panel = 'half';
     $pane->type = 'entity_field';
@@ -614,6 +691,35 @@ function hr_datasets_panelizer_defaults() {
     $pane->uuid = '8e07fd9e-e8e8-4910-bbf9-67c4b711774b';
     $display->content['new-8e07fd9e-e8e8-4910-bbf9-67c4b711774b'] = $pane;
     $display->panels['half'][0] = 'new-8e07fd9e-e8e8-4910-bbf9-67c4b711774b';
+    $pane = new stdClass();
+    $pane->pid = 'new-4568a0a5-9b9f-4e7a-a2b1-38484490e34b';
+    $pane->panel = 'half';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_ds_instructions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4568a0a5-9b9f-4e7a-a2b1-38484490e34b';
+    $display->content['new-4568a0a5-9b9f-4e7a-a2b1-38484490e34b'] = $pane;
+    $display->panels['half'][1] = 'new-4568a0a5-9b9f-4e7a-a2b1-38484490e34b';
     $pane = new stdClass();
     $pane->pid = 'new-515e70a8-4324-4fc5-8545-bd4699161c85';
     $pane->panel = 'header';
