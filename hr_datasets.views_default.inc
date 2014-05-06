@@ -70,10 +70,43 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'search_result';
-  /* Field: Indexed Node: Node ID */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Field: Indexed Node: Dataset Categories */
+  $handler->display->display_options['fields']['field_dataset_categories']['id'] = 'field_dataset_categories';
+  $handler->display->display_options['fields']['field_dataset_categories']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_dataset_categories']['field'] = 'field_dataset_categories';
+  $handler->display->display_options['fields']['field_dataset_categories']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_dataset_categories']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_dataset_categories']['bypass_access'] = 0;
+  /* Field: Indexed Node: Summary */
+  $handler->display->display_options['fields']['field_ds_summary']['id'] = 'field_ds_summary';
+  $handler->display->display_options['fields']['field_ds_summary']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_summary']['field'] = 'field_ds_summary';
+  /* Field: Indexed Node: Dataset Date */
+  $handler->display->display_options['fields']['field_ds_date']['id'] = 'field_ds_date';
+  $handler->display->display_options['fields']['field_ds_date']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_date']['field'] = 'field_ds_date';
+  $handler->display->display_options['fields']['field_ds_date']['settings'] = array(
+    'format_type' => 'hr_1',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Indexed Node: Abstract */
+  $handler->display->display_options['fields']['field_ds_abstract']['id'] = 'field_ds_abstract';
+  $handler->display->display_options['fields']['field_ds_abstract']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_abstract']['field'] = 'field_ds_abstract';
+  /* Field: Indexed Node: Dataset Files */
+  $handler->display->display_options['fields']['field_ds_files']['id'] = 'field_ds_files';
+  $handler->display->display_options['fields']['field_ds_files']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_files']['field'] = 'field_ds_files';
+  $handler->display->display_options['fields']['field_ds_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ds_files']['delta_offset'] = '0';
+  /* Field: Indexed Node: Instructions */
+  $handler->display->display_options['fields']['field_ds_instructions']['id'] = 'field_ds_instructions';
+  $handler->display->display_options['fields']['field_ds_instructions']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_instructions']['field'] = 'field_ds_instructions';
   /* Sort criterion: Indexed Node: Dataset Date */
   $handler->display->display_options['sorts']['field_ds_date']['id'] = 'field_ds_date';
   $handler->display->display_options['sorts']['field_ds_date']['table'] = 'search_api_index_default_node_index';
@@ -128,6 +161,31 @@ Dataset Date Desc|Newest first',
     30037204 => 0,
   );
 
+  /* Display: Master */
+  $handler = $view->new_display('page', 'Master', 'master');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['mefibs'] = array(
+    'blocks' => array(
+      0 => array(
+        'name' => 'Sorts',
+        'machine_name' => 'sorts',
+      ),
+    ),
+    'extras' => array(
+      'sort' => NULL,
+      'items_per_page' => NULL,
+    ),
+    'list' => array(
+      'sort_block' => 'sorts',
+      'filter' => array(),
+    ),
+    'master' => array(
+      'filter' => array(),
+      'sort_block' => 'sorts',
+    ),
+  );
+  $handler->display->display_options['path'] = 'node/%/datasets';
+
   /* Display: List */
   $handler = $view->new_display('page', 'List', 'list');
   $handler->display->display_options['exposed_block'] = TRUE;
@@ -147,7 +205,66 @@ Dataset Date Desc|Newest first',
       'filter' => array(),
     ),
   );
-  $handler->display->display_options['path'] = 'node/%/datasets';
+  $handler->display->display_options['path'] = 'node/%/datasets/list';
+  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['title'] = 'List';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Table */
+  $handler = $view->new_display('page', 'Table', 'table');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['mefibs'] = array(
+    'blocks' => array(
+      0 => array(
+        'name' => 'Sorts',
+        'machine_name' => 'sorts',
+      ),
+    ),
+    'extras' => array(
+      'sort' => NULL,
+      'items_per_page' => NULL,
+    ),
+    'list' => array(
+      'sort_block' => 'sorts',
+      'filter' => array(),
+    ),
+    'table' => array(
+      'filter' => array(),
+      'sort_block' => 'sorts',
+    ),
+  );
+  $handler->display->display_options['path'] = 'node/%/datasets/table';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Table';
+  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
   $translatables['hr_datasets'] = array(
     t('Master'),
     t('more'),
@@ -164,13 +281,16 @@ Dataset Date Desc|Newest first',
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Node ID'),
-    t('.'),
-    t(','),
+    t('Dataset Categories'),
+    t('Summary'),
     t('Dataset Date'),
+    t('Abstract'),
+    t('Dataset Files'),
+    t('Instructions'),
     t('All'),
     t('Search Datasets'),
     t('List'),
+    t('Table'),
   );
   $export['hr_datasets'] = $view;
 
