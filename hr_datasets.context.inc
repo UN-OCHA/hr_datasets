@@ -13,6 +13,44 @@ function hr_datasets_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'hr_data';
+  $context->description = '';
+  $context->tag = 'Datasets';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'applications/data' => 'applications/data',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-hr_datasets-dataset_locations' => array(
+          'module' => 'views',
+          'delta' => 'hr_datasets-dataset_locations',
+          'region' => 'sidebar_first',
+          'weight' => '5',
+        ),
+        'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
+          'module' => 'facetapi',
+          'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
+          'region' => 'sidebar_first',
+          'weight' => '6',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Datasets');
+  $export['hr_data'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'hr_datasets_space';
   $context->description = '';
   $context->tag = 'Datasets';

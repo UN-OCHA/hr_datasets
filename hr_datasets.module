@@ -51,3 +51,21 @@ function hr_datasets_og_features_toggle($entity, $entity_id, $entity_type, $feat
 
 }
 
+function hr_datasets_block_view_alter(&$data, $block) {
+  $path = request_path();
+  if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && $path = 'applications/data') {
+    $data['content']['field_locations']['#attributes']['class'][] = 'menu';
+    $data['content']['field_locations']['#attributes']['class'][] = 'nav';
+    $data['subject'] = t('Datasets by location');
+  }
+}
+
+function hr_datasets_preprocess_block(&$vars) {
+  $block = $vars['elements']['#block'];
+  $path = request_path();
+  if ($block->module == 'facetapi' && $path == 'applications/data') {
+    $vars['classes_array'] = array(
+      'block',
+    );
+  }
+}
