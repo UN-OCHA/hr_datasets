@@ -26,6 +26,12 @@ function hr_datasets_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views--exp-hr_datasets-master' => array(
+          'module' => 'views',
+          'delta' => '-exp-hr_datasets-master',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
         'views-hr_datasets-dataset_locations' => array(
           'module' => 'views',
           'delta' => 'hr_datasets-dataset_locations',
