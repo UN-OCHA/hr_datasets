@@ -35,14 +35,14 @@ function hr_datasets_context_default_contexts() {
         'views-hr_datasets-dataset_locations' => array(
           'module' => 'views',
           'delta' => 'hr_datasets-dataset_locations',
-          'region' => 'sidebar_first',
-          'weight' => '5',
+          'region' => 'content',
+          'weight' => '-10',
         ),
         'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' => array(
           'module' => 'facetapi',
           'delta' => 'uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17',
-          'region' => 'sidebar_first',
-          'weight' => '6',
+          'region' => 'content',
+          'weight' => '-8',
         ),
       ),
     ),

@@ -54,9 +54,25 @@ function hr_datasets_og_features_toggle($entity, $entity_id, $entity_type, $feat
 function hr_datasets_block_view_alter(&$data, $block) {
   $path = request_path();
   if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && $path == 'applications/data') {
-    $data['content']['field_locations']['#attributes']['class'][] = 'menu';
-    $data['content']['field_locations']['#attributes']['class'][] = 'nav';
-    $data['subject'] = t('Datasets by location');
+    $options = array();
+    $options['_none_'] = t('Find datasets by location...');
+    $regex = '/<a(.*)href="([^"]*)"(.*)>(.*)<span class="element-invisible">(.*)<\/span><\/a>/';
+    foreach ($data['content']['field_locations']['#items'] as $item) {
+      $matches = array();
+      preg_match($regex, $item['data'], $matches);
+      if (!empty($matches)) {
+        $options[$matches[2]] = $matches[4];
+      }
+    }
+    $data['content'] = array(
+      '#type' => 'select',
+      '#id' => 'hr_datasets_location',
+      '#title' => 'Datasets by location',
+      '#options' => $options,
+      '#attributes' => array('onchange' => "top.location.href=document.getElementById('hr_datasets_location').options[document.getElementById('hr_datasets_location').selectedIndex].value",
+        'data-placeholder' => t('Find datasets by location...')),
+    );
+    $data['subject'] = '';
   }
 }
 
@@ -66,6 +82,8 @@ function hr_datasets_preprocess_block(&$vars) {
   if ($block->module == 'facetapi' && $path == 'applications/data') {
     $vars['classes_array'] = array(
       'block',
+      'hr-highlighted',
+      'text-center',
     );
   }
 }
