@@ -861,7 +861,7 @@ function hr_datasets_panelizer_defaults() {
     $pane->configuration = array(
       'format' => 'hr_1',
       'context' => 'panelizer',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => 'Post date',
     );
     $pane->cache = array();
