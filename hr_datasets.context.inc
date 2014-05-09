@@ -44,6 +44,12 @@ function hr_datasets_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
+        'og_menu-og_single_menu_block' => array(
+          'module' => 'og_menu',
+          'delta' => 'og_single_menu_block',
+          'region' => 'sidebar_first',
+          'weight' => '-5',
+        ),
       ),
     ),
   );
