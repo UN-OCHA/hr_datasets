@@ -137,14 +137,6 @@ Dataset Date Desc|Newest first',
     'hr_dataset' => 'hr_dataset',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Indexed Node: Status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_node_index';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['status']['group'] = 1;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_default_node_index';
@@ -394,6 +386,138 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['fields']['field_ds_instructions']['id'] = 'field_ds_instructions';
   $handler->display->display_options['fields']['field_ds_instructions']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_ds_instructions']['field'] = 'field_ds_instructions';
+  /* Field: Indexed Node: Date created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = 'Post date';
+  $handler->display->display_options['fields']['created']['date_format'] = 'hr_1';
+  $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Indexed Node: Date changed */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Updated date';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'hr_1';
+  $handler->display->display_options['fields']['changed']['link_to_entity'] = 0;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = 'Path';
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  $handler->display->display_options['path'] = 'node/%/datasets/csv';
+  $handler->display->display_options['displays'] = array(
+    'master' => 'master',
+    'list' => 'list',
+    'table' => 'table',
+    'default' => 0,
+    'dataset_locations' => 0,
+  );
+
+  /* Display: CSV ADMIN */
+  $handler = $view->new_display('views_data_export', 'CSV ADMIN', 'csv_admin');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'og_context';
+  $handler->display->display_options['access']['perm'] = 'view any unpublished hr_dataset content';
+  $handler->display->display_options['access']['group_id_arg'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['attach_text'] = 'CSV ADMIN';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = 'datasets.csv';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 0;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Published';
+  $handler->display->display_options['fields']['status']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['status']['format_name'] = 1;
+  /* Field: Indexed Node: Locations */
+  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
+  /* Field: Indexed Node: Dataset Categories */
+  $handler->display->display_options['fields']['field_dataset_categories']['id'] = 'field_dataset_categories';
+  $handler->display->display_options['fields']['field_dataset_categories']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_dataset_categories']['field'] = 'field_dataset_categories';
+  $handler->display->display_options['fields']['field_dataset_categories']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_dataset_categories']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_dataset_categories']['bypass_access'] = 0;
+  /* Field: Indexed Node: Summary */
+  $handler->display->display_options['fields']['field_ds_summary']['id'] = 'field_ds_summary';
+  $handler->display->display_options['fields']['field_ds_summary']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_summary']['field'] = 'field_ds_summary';
+  /* Field: Indexed Node: Data Source(s) */
+  $handler->display->display_options['fields']['field_ds_datasources']['id'] = 'field_ds_datasources';
+  $handler->display->display_options['fields']['field_ds_datasources']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_datasources']['field'] = 'field_ds_datasources';
+  /* Field: Indexed Node: Abstract */
+  $handler->display->display_options['fields']['field_ds_abstract']['id'] = 'field_ds_abstract';
+  $handler->display->display_options['fields']['field_ds_abstract']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_abstract']['field'] = 'field_ds_abstract';
+  /* Field: Indexed Node: Dataset Types */
+  $handler->display->display_options['fields']['field_dataset_types']['id'] = 'field_dataset_types';
+  $handler->display->display_options['fields']['field_dataset_types']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_dataset_types']['field'] = 'field_dataset_types';
+  $handler->display->display_options['fields']['field_dataset_types']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_dataset_types']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_dataset_types']['bypass_access'] = 0;
+  /* Field: Indexed Node: Terms of Use */
+  $handler->display->display_options['fields']['field_terms_of_use']['id'] = 'field_terms_of_use';
+  $handler->display->display_options['fields']['field_terms_of_use']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_terms_of_use']['field'] = 'field_terms_of_use';
+  $handler->display->display_options['fields']['field_terms_of_use']['type'] = 'text_plain';
+  /* Field: Indexed Node: Dataset Language(s) */
+  $handler->display->display_options['fields']['field_languages']['id'] = 'field_languages';
+  $handler->display->display_options['fields']['field_languages']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_languages']['field'] = 'field_languages';
+  $handler->display->display_options['fields']['field_languages']['settings'] = array(
+    'format' => array(
+      'name' => 'name',
+      'iso' => 0,
+      'name_native' => 0,
+    ),
+  );
+  $handler->display->display_options['fields']['field_languages']['delta_offset'] = '0';
+  /* Field: Indexed Node: Dataset Date */
+  $handler->display->display_options['fields']['field_ds_date']['id'] = 'field_ds_date';
+  $handler->display->display_options['fields']['field_ds_date']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_date']['field'] = 'field_ds_date';
+  $handler->display->display_options['fields']['field_ds_date']['settings'] = array(
+    'format_type' => 'hr_1',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Indexed Node: Most Recent Changes */
+  $handler->display->display_options['fields']['field_ds_recent_changes']['id'] = 'field_ds_recent_changes';
+  $handler->display->display_options['fields']['field_ds_recent_changes']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_recent_changes']['field'] = 'field_ds_recent_changes';
+  /* Field: Indexed Node: Dataset Files */
+  $handler->display->display_options['fields']['field_ds_files']['id'] = 'field_ds_files';
+  $handler->display->display_options['fields']['field_ds_files']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_files']['field'] = 'field_ds_files';
+  $handler->display->display_options['fields']['field_ds_files']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_ds_files']['delta_offset'] = '0';
+  /* Field: Indexed Node: Instructions */
+  $handler->display->display_options['fields']['field_ds_instructions']['id'] = 'field_ds_instructions';
+  $handler->display->display_options['fields']['field_ds_instructions']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['field_ds_instructions']['field'] = 'field_ds_instructions';
   /* Field: Indexed Node: Author */
   $handler->display->display_options['fields']['author']['id'] = 'author';
   $handler->display->display_options['fields']['author']['table'] = 'search_api_index_default_node_index';
@@ -422,7 +546,7 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['fields']['url']['label'] = 'Path';
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  $handler->display->display_options['path'] = 'node/%/datasets/csv';
+  $handler->display->display_options['path'] = 'node/%/datasets/csv-admin';
   $handler->display->display_options['displays'] = array(
     'master' => 'master',
     'list' => 'list',
@@ -465,10 +589,11 @@ Dataset Date Desc|Newest first',
     t('Terms of Use'),
     t('Dataset Language(s)'),
     t('Most Recent Changes'),
-    t('Author'),
     t('Post date'),
     t('Updated date'),
     t('Path'),
+    t('CSV ADMIN'),
+    t('Author'),
   );
   $export['hr_datasets'] = $view;
 
