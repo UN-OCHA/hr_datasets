@@ -721,6 +721,46 @@ function hr_datasets_panelizer_defaults() {
     $display->content['new-4568a0a5-9b9f-4e7a-a2b1-38484490e34b'] = $pane;
     $display->panels['half'][1] = 'new-4568a0a5-9b9f-4e7a-a2b1-38484490e34b';
     $pane = new stdClass();
+    $pane->pid = 'new-ef4f215f-e7a4-40f9-a9bc-37fd8c0cb93a';
+    $pane->panel = 'header';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_access',
+          'settings' => array(
+            'type' => 'update',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'panelizer',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Edit link',
+      'title' => '',
+      'body' => '<p style="text-align: right;"><a href="/node/%node:nid/edit">Edit</a></p>
+',
+      'format' => 'panopoly_wysiwyg_text',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ef4f215f-e7a4-40f9-a9bc-37fd8c0cb93a';
+    $display->content['new-ef4f215f-e7a4-40f9-a9bc-37fd8c0cb93a'] = $pane;
+    $display->panels['header'][0] = 'new-ef4f215f-e7a4-40f9-a9bc-37fd8c0cb93a';
+    $pane = new stdClass();
     $pane->pid = 'new-515e70a8-4324-4fc5-8545-bd4699161c85';
     $pane->panel = 'header';
     $pane->type = 'entity_field';
@@ -744,11 +784,11 @@ function hr_datasets_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '515e70a8-4324-4fc5-8545-bd4699161c85';
     $display->content['new-515e70a8-4324-4fc5-8545-bd4699161c85'] = $pane;
-    $display->panels['header'][0] = 'new-515e70a8-4324-4fc5-8545-bd4699161c85';
+    $display->panels['header'][1] = 'new-515e70a8-4324-4fc5-8545-bd4699161c85';
     $pane = new stdClass();
     $pane->pid = 'new-e43ebae8-e2ab-45fa-a88d-688938b67f71';
     $pane->panel = 'quarter1';
