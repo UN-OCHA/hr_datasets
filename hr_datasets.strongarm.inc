@@ -169,7 +169,7 @@ return mb_strtoupper(htmlspecialchars_decode("[node:field_locations]", ENT_QUOTE
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_hr_dataset_pattern';
-  $strongarm->value = '[node:og-group-ref:url:path]/dataset/[node:title]';
+  $strongarm->value = '[node:og-group-ref:0:url:path]/dataset/[node:title]';
   $export['pathauto_node_hr_dataset_pattern'] = $strongarm;
 
   return $export;
