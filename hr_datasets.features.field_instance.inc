@@ -934,7 +934,6 @@ function hr_datasets_field_default_field_instances() {
   t('Dataset Language(s)');
   t('Dataset Types');
   t('Describe changes to the dataset to help users know if they should download the new version or not.  Mention the date of the changes.  <strong>DO NOT</strong> link to datasets from here.  ');
-  t('Groups audience');
   t('If you upload a file here, a link to it will be available to users.  See the <a href="https://sites.google.com/site/ochaimwiki/file-and-dataset-naming-manual/file-naming-convention">OCHA IM Wiki article on the file naming convention</a> for information about file naming for datasets. ');
   t('Indicate any information you have about limitations on the use of this data.  OCHA should generally push for datasets to be released as "public domain" to enable their use by partners such as OpenStreetMap.  For new records, this field defaults to <em>See the site\'s <a href="/applications/data/page/terms-use">Terms of Use</a>.  This does not replace any terms of use information provided with the dataset.</em>');
   t('Instructions');
@@ -942,6 +941,7 @@ function hr_datasets_field_default_field_instances() {
   t('Most Recent Changes');
   t('Name');
   t('Select which country or region to which the dataset applies.  If you don\'t see what you are looking for here, get in touch with <a href="mailto:data@humanitarianresponse.info">data@humanitarianresponse.info</a>.');
+  t('Space(s)');
   t('Summary');
   t('Terms of Use');
   t('This field is <strong>NOT REQUIRED IF</strong> you have a dataset file uploaded to the site.  Otherwise, use this field to post links or information about how to obtain the data (<a href="/operations/nepal/dataset/nepal-contour-lines">example</a>).  You can also use this field to provide some more information about an uploaded dataset (<a href="/operations/syria/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).');
