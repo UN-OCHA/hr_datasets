@@ -16,7 +16,7 @@ function hr_datasets_field_default_field_instances() {
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'Choose from the list of categories and click the Add button.  You can apply more than one category to this record.  This allows you to have, for example, Admin Level 1 Boundaries and Admin Level 2 Boundaries in the same file.  <strong>IGNORE THE ERROR</strong> that occurs until you have added the first category. ',
+    'description' => 'Choose from COD or FOD and then click the “Add another item button”.  You can apply more than one category to this record. For example you could include Admin Level 1,2 and 3 Boundaries in the same file.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -135,8 +135,8 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '<strong>DO NOT</strong> INCLUDE HERE: information about the data types, languages, sources, and dates.<p>
-<strong>DO</strong> INCLUDE HERE: descriptions of field names, methodology of production, update frequency, information about consistency and accuracy.',
+    'description' => 'Add a generic email address for your office so questions about this dataset or the metadata can be sent to the appropriate data guardian. If you do not have a generic email address use <a href="mailto:data@humanitarianresponse.info">data@humanitarianresponse.info</a> Suggested text: OCHA is the data guardian; send question or comments about the dataset to email address.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -187,7 +187,7 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'List the sources of data here.  Spell out any acronyms.',
+    'description' => 'List the sources of data here.  Spell out all acronyms (e.g. Central Statistics Agency (CSA)) Website of data source can be included here or in the abstract)',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -351,7 +351,9 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This field is <strong>NOT REQUIRED IF</strong> you have a dataset file uploaded to the site.  Otherwise, use this field to post links or information about how to obtain the data (<a href="http://cod2.humanitarianresponse.info/dataset/nepal-contour-lines">example</a>).  You can also use this field to provide some more information about an uploaded dataset (<a href="http://cod2.humanitarianresponse.info/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).',
+    'description' => '<strong>DO</strong> INCLUDE HERE: Information about how to access/request the dataset. (e.g. Contact information to request a dataset (<a href="/operations/nepal/dataset/nepal-contour-lines">example</a>) or the URL to access the dataset (<a href="/operations/syria/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).)<br>
+<strong>DO NOT</strong> INLCLUDE HERE: any other information about the dataset. All other information should be in the Abstract section.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -402,7 +404,7 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Describe changes to the dataset to help users know if they should download the new version or not.  Mention the date of the changes (<a href="http://cod2.humanitarianresponse.info/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-admin-level-3-1">example</a>).  <strong>DO NOT</strong> link to datasets from here.  ',
+    'description' => 'Describe changes to the dataset so clients know if they should download the new version or not and the impact it will have on their systems. Include the date of the changes. <strong>DO NOT</strong> provide a link to datasets from here. ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -453,7 +455,7 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This field is <strong>ONLY REQUIRED IF</strong> the category is <strong>FOD-Other</strong>, in which case it provides a place for some clarity about what is in the dataset.  Otherwise this field can be left blank. ',
+    'description' => 'Add a couple words to describe the dataset more specifically than the Dataset Category . This must be completed  details if it is a <strong>FOD</strong>.  (examples: Storm Surg Reading, Regional Health boundaries, Obstacles, Main Roads, Trails etc)  ',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -508,7 +510,8 @@ function hr_datasets_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Add a generic email address for your office so questions about this dataset or the metadata can be sent to the appropriate data guardian. A default email address is provided.',
+    'description' => 'Add a generic email address for your office so questions about this dataset or the metadata can be sent to the appropriate data guardian. If you do not have a generic email address use <a href="mailto:data@humanitarianresponse.info">data@humanitarianresponse.info</a> Suggested text: OCHA is the data guardian; send question or comments about the dataset to email address.
+',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -920,11 +923,14 @@ function hr_datasets_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<strong>DO NOT</strong> INCLUDE HERE: information about the data types, languages, sources, and dates.<p>
-<strong>DO</strong> INCLUDE HERE: descriptions of field names, methodology of production, update frequency, information about consistency and accuracy.');
+  t('<strong>DO</strong> INCLUDE HERE: Information about how to access/request the dataset. (e.g. Contact information to request a dataset (<a href="/operations/nepal/dataset/nepal-contour-lines">example</a>) or the URL to access the dataset (<a href="/operations/syria/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).)<br>
+<strong>DO NOT</strong> INLCLUDE HERE: any other information about the dataset. All other information should be in the Abstract section.
+');
   t('Abstract');
-  t('Add a generic email address for your office so questions about this dataset or the metadata can be sent to the appropriate data guardian. A default email address is provided.');
-  t('Choose from the list of categories and click the Add button.  You can apply more than one category to this record.  This allows you to have, for example, Admin Level 1 Boundaries and Admin Level 2 Boundaries in the same file.  <strong>IGNORE THE ERROR</strong> that occurs until you have added the first category. ');
+  t('Add a couple words to describe the dataset more specifically than the Dataset Category . This must be completed  details if it is a <strong>FOD</strong>.  (examples: Storm Surg Reading, Regional Health boundaries, Obstacles, Main Roads, Trails etc)  ');
+  t('Add a generic email address for your office so questions about this dataset or the metadata can be sent to the appropriate data guardian. If you do not have a generic email address use <a href="mailto:data@humanitarianresponse.info">data@humanitarianresponse.info</a> Suggested text: OCHA is the data guardian; send question or comments about the dataset to email address.
+');
+  t('Choose from COD or FOD and then click the “Add another item button”.  You can apply more than one category to this record. For example you could include Admin Level 1,2 and 3 Boundaries in the same file.');
   t('Country/Region');
   t('Data Guardian');
   t('Data Source(s)');
@@ -933,19 +939,17 @@ function hr_datasets_field_default_field_instances() {
   t('Dataset Files');
   t('Dataset Language(s)');
   t('Dataset Types');
-  t('Describe changes to the dataset to help users know if they should download the new version or not.  Mention the date of the changes (<a href="http://cod2.humanitarianresponse.info/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-admin-level-3-1">example</a>).  <strong>DO NOT</strong> link to datasets from here.  ');
+  t('Describe changes to the dataset so clients know if they should download the new version or not and the impact it will have on their systems. Include the date of the changes. <strong>DO NOT</strong> provide a link to datasets from here. ');
   t('Groups audience');
   t('If you upload a file here, a link to it will be available to users.  See the <a href="https://sites.google.com/site/ochaimwiki/file-and-dataset-naming-manual/file-naming-convention">OCHA IM Wiki article on the file naming convention</a> for information about file naming for datasets. ');
   t('Indicate any information you have about limitations on the use of this data.  OCHA should generally push for datasets to be released as "public domain" to enable their use by partners such as OpenStreetMap.  For new records, this field defaults to <em>See the site\'s <a href="/terms-use">Terms of Use</a>.  This does not replace any terms of use information provided with the dataset.</em>');
   t('Instructions');
-  t('List the sources of data here.  Spell out any acronyms.');
+  t('List the sources of data here.  Spell out all acronyms (e.g. Central Statistics Agency (CSA)) Website of data source can be included here or in the abstract)');
   t('Most Recent Changes');
   t('Name');
   t('Select which country or region to which the dataset applies.  If you don\'t see what you are looking for here, get in touch with OCHA FIS (formerly ISS) in Geneva.');
   t('Summary');
   t('Terms of Use');
-  t('This field is <strong>NOT REQUIRED IF</strong> you have a dataset file uploaded to the site.  Otherwise, use this field to post links or information about how to obtain the data (<a href="http://cod2.humanitarianresponse.info/dataset/nepal-contour-lines">example</a>).  You can also use this field to provide some more information about an uploaded dataset (<a href="http://cod2.humanitarianresponse.info/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).');
-  t('This field is <strong>ONLY REQUIRED IF</strong> the category is <strong>FOD-Other</strong>, in which case it provides a place for some clarity about what is in the dataset.  Otherwise this field can be left blank. ');
   t('This is a <strong>multiselect</strong> field.  Choose one or more languages that are used in the dataset.');
   t('This is a <strong>multiselect</strong> field.  Choose the one or more types of data included in the dataset.  ');
   t('Title');
