@@ -41,7 +41,7 @@ function hr_datasets_og_features_toggle($entity, $entity_id, $entity_type, $feat
           'link_path' => 'node/'.$entity_id.'/datasets',
           'link_title' => 'Datasets',
           'menu_name' => OG_MENU_SINGLE_MENU_NAME,
-          'weight' => 8,
+          'weight' => 12,
           'plid' => $mlid,
         );
         menu_link_save($menu_link);
