@@ -753,7 +753,7 @@ Suggested text: <strong>OCHA</strong> is the data guardian; send question or com
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Space(s)',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -766,7 +766,7 @@ Suggested text: <strong>OCHA</strong> is the data guardian; send question or com
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'disable',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'og_context' => 0,
