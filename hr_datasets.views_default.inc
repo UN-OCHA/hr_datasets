@@ -336,7 +336,6 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['label'] = 'Data Guardian';
   /* Field: Indexed Node: Abstract */
   $handler->display->display_options['fields']['field_ds_abstract']['id'] = 'field_ds_abstract';
   $handler->display->display_options['fields']['field_ds_abstract']['table'] = 'search_api_index_default_node_index';
@@ -473,7 +472,6 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
-  $handler->display->display_options['fields']['field_email']['label'] = 'Data Guardian';
   /* Field: Indexed Node: Abstract */
   $handler->display->display_options['fields']['field_ds_abstract']['id'] = 'field_ds_abstract';
   $handler->display->display_options['fields']['field_ds_abstract']['table'] = 'search_api_index_default_node_index';
@@ -595,7 +593,7 @@ Dataset Date Desc|Newest first',
     t('CSV'),
     t('Published'),
     t('Data Source(s)'),
-    t('Data Guardian'),
+    t('Email'),
     t('Dataset Types'),
     t('Terms of Use'),
     t('Dataset Language(s)'),

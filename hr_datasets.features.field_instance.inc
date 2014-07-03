@@ -403,7 +403,7 @@ function hr_datasets_field_default_field_instances() {
     'bundle' => 'hr_dataset',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add a couple words to describe the dataset more specifically than the Dataset Category . This must be completed details if it is a <strong>FOD</strong>. (examples: Storm Surg Reading, Regional Health boundaries, Obstacles, Main Roads, Trails etc).',
+    'description' => 'Describe changes to the dataset so clients know if they should download the new version or not and the impact it will have on their systems. Include the date of the changes. DO NOT provide a link to datasets from here.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -932,7 +932,6 @@ Suggested text: <strong>OCHA</strong> is the data guardian; send question or com
   t('<strong>DO</strong> INCLUDE HERE: Information about how to access/request the dataset. (e.g. Contact information to request a dataset (<a href="https://www.humanitarianresponse.info/operations/nepal/dataset/nepal-contour-lines">example</a>) or the URL to access the dataset (<a href="https://www.humanitarianresponse.info/operations/syria/dataset/syrian-arab-republic-admin-level-1-boundaries-admin-level-2-boundaries-populated-places">example</a>).)<br>
 <strong>DO NOT</strong> INLCLUDE HERE: any other information about the dataset. All other information should be in the Abstract section.');
   t('Abstract');
-  t('Add a couple words to describe the dataset more specifically than the Dataset Category . This must be completed details if it is a <strong>FOD</strong>. (examples: Storm Surg Reading, Regional Health boundaries, Obstacles, Main Roads, Trails etc).');
   t('Add a couple words to describe the dataset more specifically than the Dataset Category.This must be completed details if it is a <strong>FOD</strong>. (examples: Storm Surg Reading, Regional Health boundaries, Obstacles, Main Roads, Trails etc).');
   t('Country/Region');
   t('Data Guardian');
@@ -942,6 +941,7 @@ Suggested text: <strong>OCHA</strong> is the data guardian; send question or com
   t('Dataset Files');
   t('Dataset Language(s)');
   t('Dataset Types');
+  t('Describe changes to the dataset so clients know if they should download the new version or not and the impact it will have on their systems. Include the date of the changes. DO NOT provide a link to datasets from here.');
   t('If you upload a file here, a link to it will be available to users.  See the <a href="https://sites.google.com/site/ochaimwiki/file-and-dataset-naming-manual/file-naming-convention">OCHA IM Wiki article on the file naming convention</a> for information about file naming for datasets. ');
   t('Indicate any information you have about limitations on the use of this data.  OCHA should generally push for datasets to be released as "public domain" to enable their use by partners such as OpenStreetMap.  For new records, this field defaults to <em>See the site\'s <a href="/applications/data/page/terms-use">Terms of Use</a>.  This does not replace any terms of use information provided with the dataset.</em>');
   t('Instructions');
