@@ -46,18 +46,3 @@ function hr_datasets_node_info() {
   return $items;
 }
 
-/**
- * Implements hook_default_search_api_autocomplete_search().
- */
-function hr_datasets_default_search_api_autocomplete_search() {
-  $items = array();
-  $items['search_api_views_hr_datasets'] = entity_import('search_api_autocomplete_search', '{
-    "machine_name" : "search_api_views_hr_datasets",
-    "name" : "Datasets",
-    "index_id" : "default_node_index",
-    "type" : "search_api_views",
-    "enabled" : "1",
-    "options" : { "result count" : true, "fields" : [] }
-  }');
-  return $items;
-}
