@@ -1,7 +1,6 @@
 name = Datasets
 core = 7.x
 package = Humanitarianresponse
-dependencies[] = better_exposed_filters
 dependencies[] = context
 dependencies[] = current_search
 dependencies[] = hr_locations
