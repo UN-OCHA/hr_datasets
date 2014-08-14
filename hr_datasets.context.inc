@@ -112,12 +112,6 @@ function hr_datasets_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-6',
         ),
-        'mefibs-37b629410fed7edf5e7334463d249a6c' => array(
-          'module' => 'mefibs',
-          'delta' => '37b629410fed7edf5e7334463d249a6c',
-          'region' => 'sidebar_first',
-          'weight' => '-5',
-        ),
       ),
     ),
   );
@@ -179,12 +173,6 @@ function hr_datasets_context_default_contexts() {
           'delta' => 'Xgc9MM1xeLYMhx0PgX0XU0N0N0Poh2Lh',
           'region' => 'sidebar_first',
           'weight' => '-6',
-        ),
-        'mefibs-55ad2458e7f7a4024747998754eea727' => array(
-          'module' => 'mefibs',
-          'delta' => '55ad2458e7f7a4024747998754eea727',
-          'region' => 'sidebar_first',
-          'weight' => '-5',
         ),
       ),
     ),

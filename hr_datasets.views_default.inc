@@ -44,7 +44,6 @@ Dataset Date Desc|Newest first',
         'reset_label' => '',
         'is_secondary' => 0,
       ),
-      'mefibs_block_sort_bef' => 'sorts',
     ),
     'search_api_views_fulltext' => array(
       'bef_format' => 'default',
@@ -156,47 +155,11 @@ Dataset Date Desc|Newest first',
   /* Display: Master */
   $handler = $view->new_display('page', 'Master', 'master');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['mefibs'] = array(
-    'blocks' => array(
-      0 => array(
-        'name' => 'Sorts',
-        'machine_name' => 'sorts',
-      ),
-    ),
-    'extras' => array(
-      'sort' => NULL,
-      'items_per_page' => NULL,
-    ),
-    'list' => array(
-      'sort_block' => 'sorts',
-      'filter' => array(),
-    ),
-    'master' => array(
-      'filter' => array(),
-      'sort_block' => 'sorts',
-    ),
-  );
   $handler->display->display_options['path'] = 'node/%/datasets';
 
   /* Display: List */
   $handler = $view->new_display('page', 'List', 'list');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['mefibs'] = array(
-    'blocks' => array(
-      0 => array(
-        'name' => 'Sorts',
-        'machine_name' => 'sorts',
-      ),
-    ),
-    'extras' => array(
-      'sort' => NULL,
-      'items_per_page' => NULL,
-    ),
-    'list' => array(
-      'sort_block' => 'sorts',
-      'filter' => array(),
-    ),
-  );
   $handler->display->display_options['path'] = 'node/%/datasets/list';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'List';
@@ -230,26 +193,6 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['mefibs'] = array(
-    'blocks' => array(
-      0 => array(
-        'name' => 'Sorts',
-        'machine_name' => 'sorts',
-      ),
-    ),
-    'extras' => array(
-      'sort' => NULL,
-      'items_per_page' => NULL,
-    ),
-    'list' => array(
-      'sort_block' => 'sorts',
-      'filter' => array(),
-    ),
-    'table' => array(
-      'filter' => array(),
-      'sort_block' => 'sorts',
-    ),
-  );
   $handler->display->display_options['path'] = 'node/%/datasets/table';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';

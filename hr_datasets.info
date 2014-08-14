@@ -7,7 +7,6 @@ dependencies[] = current_search
 dependencies[] = hr_locations
 dependencies[] = hr_operations
 dependencies[] = languagefield
-dependencies[] = mefibs
 dependencies[] = og_context
 dependencies[] = og_moderation
 dependencies[] = og_ui
