@@ -111,8 +111,6 @@ Dataset Date Desc|Newest first',
   $handler->display->display_options['sorts']['field_ds_date']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['sorts']['field_ds_date']['field'] = 'field_ds_date';
   $handler->display->display_options['sorts']['field_ds_date']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['field_ds_date']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_ds_date']['expose']['label'] = 'Dataset Date';
   /* Contextual filter: Indexed Node: Groups audience */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_default_node_index';
