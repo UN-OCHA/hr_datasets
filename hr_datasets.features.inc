@@ -45,4 +45,3 @@ function hr_datasets_node_info() {
   );
   return $items;
 }
-
