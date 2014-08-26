@@ -60,6 +60,9 @@ return mb_strtoupper(htmlspecialchars_decode("[node:field_locations]", ENT_QUOTE
         'redirect' => array(
           'weight' => '16',
         ),
+        'language' => array(
+          'weight' => '-10',
+        ),
       ),
       'display' => array(),
     ),
