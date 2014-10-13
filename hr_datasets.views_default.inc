@@ -195,8 +195,8 @@ function hr_datasets_views_default_views() {
   $handler->display->display_options['fields']['changed']['table'] = 'search_api_index_default_node_index';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Last Updated Date';
-  $handler->display->display_options['fields']['changed']['date_format'] = 'long';
-  $handler->display->display_options['fields']['changed']['second_date_format'] = 'long';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'hr_1';
+  $handler->display->display_options['fields']['changed']['second_date_format'] = 'hr_1';
   $handler->display->display_options['fields']['changed']['link_to_entity'] = 0;
   /* Field: Indexed Node: Abstract */
   $handler->display->display_options['fields']['field_ds_abstract']['id'] = 'field_ds_abstract';
