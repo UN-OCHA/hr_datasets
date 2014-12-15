@@ -372,6 +372,8 @@ function hr_datasets_views_default_views() {
     'default' => 0,
     'dataset_locations' => 0,
   );
+  $handler->display->display_options['use_batch'] = 'batch';	 	+	
+  $handler->display->display_options['segment_size'] = '100';
 
   /* Display: CSV ADMIN */
   $handler = $view->new_display('views_data_export', 'CSV ADMIN', 'csv_admin');
@@ -516,6 +518,8 @@ function hr_datasets_views_default_views() {
     'default' => 0,
     'dataset_locations' => 0,
   );
+  $handler->display->display_options['use_batch'] = 'batch';
+  $handler->display->display_options['segment_size'] = '100';
   $translatables['hr_datasets'] = array(
     t('Master'),
     t('more'),
