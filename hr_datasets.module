@@ -94,3 +94,12 @@ function hr_datasets_form_views_exposed_form_alter (&$form, $form_state) {
     $form['#action'] = '/applications/data/datasets';
   }
 }
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function hr_datasets_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'restful') {
+    return 'plugins/' . $plugin;
+  }
+}
