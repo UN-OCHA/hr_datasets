@@ -61,7 +61,8 @@ function hr_datasets_block_view_alter(&$data, $block) {
       $matches = array();
       preg_match($regex, $item['data'], $matches);
       if (!empty($matches)) {
-        $options[$matches[2]] = $matches[4];
+        $opt_path = str_replace('/applications/data/', '/applications/data/datasets/', $matches[2]);
+        $options[$opt_path] = $matches[4];
       }
     }
     $data['content'] = array(
