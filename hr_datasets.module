@@ -53,7 +53,7 @@ function hr_datasets_og_features_toggle($entity, $entity_id, $entity_type, $feat
 
 function hr_datasets_block_view_alter(&$data, $block) {
   $path = request_path();
-  if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && $path == 'applications/data') {
+  if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && ($path == 'applications/data' || $path == 'en/applications/data' || $path == 'fr/applications/data' || $path == 'es/applications/data')) {
     $options = array();
     $options['_none_'] = t('Find datasets by location...');
     $regex = '/<a(.*)href="([^"]*)"(.*)>(.*)<span class="element-invisible">(.*)<\/span><\/a>/';
