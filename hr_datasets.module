@@ -52,8 +52,8 @@ function hr_datasets_og_features_toggle($entity, $entity_id, $entity_type, $feat
 }
 
 function hr_datasets_block_view_alter(&$data, $block) {
-  $path = request_path();
-  if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && ($path == 'applications/data' || $path == 'en/applications/data' || $path == 'fr/applications/data' || $path == 'es/applications/data')) {
+  $path = current_path();
+  if ($block->module == 'facetapi' && $block->bid == 'facetapi-uulIYjH3ZtSu9hhI5ARgBYQeEUNqWe17' && $path == 'applications/data') {
     $options = array();
     $options['_none_'] = t('Find datasets by location...');
     $regex = '/<a(.*)href="([^"]*)"(.*)>(.*)<span class="element-invisible">(.*)<\/span><\/a>/';
@@ -90,7 +90,7 @@ function hr_datasets_preprocess_block(&$vars) {
 }
 
 function hr_datasets_form_views_exposed_form_alter (&$form, $form_state) {
-  $path = request_path();
+  $path = current_path();
   if ($path == 'applications/data' && $form['#id'] == 'views-exposed-form-hr-datasets-master') {
     $form['#action'] = '/applications/data/datasets';
   }
