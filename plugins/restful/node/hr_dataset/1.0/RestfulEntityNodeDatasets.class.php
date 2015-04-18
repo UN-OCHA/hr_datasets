@@ -31,6 +31,66 @@ class RestfulEntityNodeDatasets extends \RestfulEntityBaseNode {
   public function publicFieldsInfo() {
     $public_fields = parent::publicFieldsInfo();
 
+    $public_fields['categories'] = array(
+      'property' => 'field_dataset_categories',
+      'sub_property' => 'name',
+    );
+
+    $public_fields['summary'] = array(
+      'property' => 'field_ds_summary',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['data_sources'] = array(
+      'property' => 'field_ds_datasources',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['data_guardian'] = array(
+      'property' => 'field_email',
+    );
+
+    $public_fields['terms_of_use'] = array(
+      'property' => 'field_terms_of_use',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['abstract'] = array(
+      'property' => 'field_ds_abstract',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['types'] = array(
+      'property' => 'field_dataset_types',
+      'sub_property' => 'name',
+    );
+
+    $public_fields['date'] = array(
+      'property' => 'field_ds_date',
+    );
+
+    $public_fields['recent_changes'] = array(
+      'property' => 'field_ds_recent_changes',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['languages'] = array(
+      'property' => 'field_languages',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['instructions'] = array(
+      'property' => 'field_ds_instructions',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['locations'] = array(
+      'property' => 'field_locations',
+      'resource' => array(
+        'hr_location' => 'locations',
+      ),
+      'process_callbacks' => array(array($this, 'getEntity')),
+    );
 
     $public_fields['files'] = array(
       'property' => 'field_ds_files',
@@ -44,14 +104,6 @@ class RestfulEntityNodeDatasets extends \RestfulEntityBaseNode {
       ),
       'process_callbacks' => array(array($this, 'getEntity')),
     );
-
-    /*$public_fields['space'] = array(
-      'property' => 'og_group_ref',
-      'resource' => array(
-        'hr_space' => 'spaces',
-      ),
-      'process_callbacks' => array(array($this, 'getEntity')),
-    );*/
 
     $public_fields['url'] = array(
       'property' => 'url',
