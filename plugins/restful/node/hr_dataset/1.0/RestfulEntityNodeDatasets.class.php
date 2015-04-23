@@ -67,6 +67,7 @@ class RestfulEntityNodeDatasets extends \RestfulEntityBaseNode {
 
     $public_fields['date'] = array(
       'property' => 'field_ds_date',
+      'process_callbacks' => array(array($this, 'getDatasetDate')),
     );
 
     $public_fields['recent_changes'] = array(
@@ -139,6 +140,10 @@ class RestfulEntityNodeDatasets extends \RestfulEntityBaseNode {
       }
     }
     return $return;
+  }
+
+  protected function getDatasetDate($value) {
+    return strftime('%Y-%m-%d', $value);
   }
 
 }
