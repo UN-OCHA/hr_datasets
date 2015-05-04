@@ -22,7 +22,7 @@ function hr_datasets_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_hr_dataset';
   $strongarm->value = '<?php
-return mb_strtoupper(htmlspecialchars_decode("[node:field_locations]", ENT_QUOTES)) . ": " . "[node:field_dataset_categories]";
+return mb_strtoupper(htmlspecialchars_decode("[node:field-locations]", ENT_QUOTES)) . ": " . "[node:field-dataset-categories]";
 ?>';
   $export['auto_entitylabel_pattern_node_hr_dataset'] = $strongarm;
 
