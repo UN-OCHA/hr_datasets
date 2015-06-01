@@ -13,7 +13,7 @@ function hr_datasets_taxonomy_default_vocabularies() {
       'name' => 'Dataset Category',
       'machine_name' => 'hr_dataset_category',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

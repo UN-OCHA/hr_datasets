@@ -255,6 +255,12 @@ function hr_datasets_views_default_views() {
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'search_api_index_default_node_index';
@@ -372,7 +378,7 @@ function hr_datasets_views_default_views() {
     'default' => 0,
     'dataset_locations' => 0,
   );
-  $handler->display->display_options['use_batch'] = 'batch';	 	+	
+  $handler->display->display_options['use_batch'] = 'batch';
   $handler->display->display_options['segment_size'] = '100';
 
   /* Display: CSV ADMIN */
@@ -394,6 +400,12 @@ function hr_datasets_views_default_views() {
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_default_node_index';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Indexed Node: Status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'search_api_index_default_node_index';
@@ -528,7 +540,6 @@ function hr_datasets_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-	t('Select any filter and click on Apply to see results'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -551,6 +562,8 @@ function hr_datasets_views_default_views() {
     t('Locations'),
     t('Dataset Locations'),
     t('CSV'),
+    t('Node ID'),
+    t('.'),
     t('Published'),
     t('Data Source(s)'),
     t('Data Guardian'),
