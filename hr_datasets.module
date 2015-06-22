@@ -104,3 +104,19 @@ function hr_datasets_ctools_plugin_directory($module, $plugin) {
     return 'plugins/' . $plugin;
   }
 }
+
+/**
+*  Implements hook_menu().
+*/
+
+function hr_datasets_menu(){
+  $items = array();
+  $items['node/%node/hdx-datasets'] = array(
+    'title' => 'HDX Datasets',
+    'page callback' => 'hr_datasets_hdx_datasets',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'file' => 'hr_datasets.pages.inc',
+  );
+  return $items;
+}
