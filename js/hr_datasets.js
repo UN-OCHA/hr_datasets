@@ -13,28 +13,24 @@ Drupal.behaviors.hrDatasets = {
     model: Dataset,
     params: {},
     url: function() {
-      return 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=uga';
+      return 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=uga&rows=' + this.limit + '&start=' + this.skip;
     },
 
     parse: function(response) {
-      this.totalCount = response.result.count;
-      console.log(this.totalCount);
       var models = response.result.results ? response.result.results : {};
+      this.count = response.result.count;
       var fields = [];
       _.each(models, function(resource){
-        _.each(resource.resources, function(res){
-            var title = res.name, url = res.url;
-            fields.push({title: title, url: url});
-        });
+        fields.push({title: resource.name, url: 'https://data.hdx.rwlabs.org/dataset/' + resource.id});
       });
       return fields;
-    },
+      },
 
-    limit: 10,
-    skip: 0,
-    count: 0,
+      limit: 10,
+      skip: 0,
+      count: 0,
 
-  });
+    });
 
     DatasetView = Backbone.View.extend({
 
@@ -106,14 +102,14 @@ Drupal.behaviors.hrDatasets = {
         finishedLoading: function() {
           $('#loading').hide();
           this.show();
-          $('.facetapi-active').html(this.DatasetsList.totalCount + ' items');
+          $('.facetapi-active').html(this.DatasetsList.count + ' items');
           this.pager();
         },
 
         pager: function() {
           var nextPage = parseInt(this.currentPage) + 1;
           var previousPage = parseInt(this.currentPage) - 1;
-          var count = this.DatasetsList.totalCount;
+          var count = this.DatasetsList.count;
           var itemsPerPage = this.numItems;
           var paramsString = $.param(this.DatasetsList.params);
           if (paramsString != '') {
