@@ -38,9 +38,9 @@ function _hr_datasets_csv_to_array($filename='', $delimiter=',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
         {
             if(!$header)
-                $header = $row;
+                $header = array_map('trim', $row);
             else
-                $data[] = array_combine($header, $row);
+                $data[] = array_combine($header, array_map('trim', $row));
         }
         fclose($handle);
     }
