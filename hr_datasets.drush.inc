@@ -63,6 +63,9 @@ function drush_hr_datasets_migrate($path) {
       // Set the summary
       $node = node_load($nid);
       $node->field_ds_summary[LANGUAGE_NONE][0]['value'] = '<p>This dataset is now maintained on the Humanitarian Data Exchange.</p>';
+      $node->field_ds_files = array();
+      $node->field_ds_abstract = array();
+      $node->field_ds_date = array();
       node_save($node);
     }
   }
