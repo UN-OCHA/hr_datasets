@@ -9,11 +9,18 @@ function hr_datasets_hdx_datasets($operation){
   foreach ($templates as $template) {
     hr_datasets_load_template($template, $template);
   }
-
+ 
+  //TODO: use the country field under the operation to get the country name instead of using the operation title.
   $operation_title = $operation->title;
-  //$iso3 =
+
+  include_once DRUPAL_ROOT . '/includes/locale.inc';
+  $countries = country_get_list();
+
+  $iso2code = array_search(strtolower($operation_title), array_map('strtolower', $countries));
+  $iso3code = hr_datasets_iso2_to_iso3($iso2code);
+
   drupal_add_js(drupal_get_path('module', 'hr_datasets') . '/js/hr_datasets.js');
-  drupal_add_js(array('hr_datasets' => array('operation' => $operation->title)), 'setting');
+  drupal_add_js(array('hr_datasets' => array('operation' => $iso3code)), 'setting');
 
   $html = '<div id="datasets-view">
   </div>
@@ -55,3 +62,25 @@ function hr_datasets_load_template($file, $id) {
   );
   drupal_add_html_head($template_elt, 'hr_datasets_'.$file);
 }
+
+/**
+* Function to get iso3 country code from an iso2 code.
+* @param $iso2_country_code
+* @return iso3 code
+*/
+
+function hr_datasets_iso2_to_iso3($iso2_country_code) {
+  $codes_url = 'http://country.io/iso3.json';
+  $codes = drupal_http_request($codes_url);
+  if(isset($codes->data)) {
+    $response = drupal_json_decode($codes->data);
+    if(isset($response[$iso2_country_code])) {
+      return strtolower($response[$iso2_country_code]);
+    }
+  }
+  else {
+    drupal_set_message(t('Could not reach the countries list in country.io, please consult the site admin', 'warning'));
+  }
+}
+
+

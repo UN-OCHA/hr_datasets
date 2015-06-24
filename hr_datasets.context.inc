@@ -200,6 +200,12 @@ function hr_datasets_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'hdx-datasets_hdx-datasets_search' => array(
+          'module' => 'hr_datasets',
+          'delta' => 'hdx-datasets_search',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
         'hdx-datasets_hdx-datasets_filters' => array(
           'module' => 'hr_datasets',
           'delta' => 'hdx-datasets_filters',

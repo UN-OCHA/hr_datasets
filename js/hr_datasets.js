@@ -13,7 +13,7 @@ Drupal.behaviors.hrDatasets = {
     model: Dataset,
     params: {},
     url: function() {
-      return 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=uga&rows=' + this.limit + '&start=' + this.skip;
+      return 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=' + settings.hr_datasets.operation + '&rows=' + this.limit + '&start=' + this.skip;
     },
 
     parse: function(response) {
