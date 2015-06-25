@@ -65,6 +65,8 @@ function drush_hr_datasets_migrate($path) {
       $node->field_ds_summary[LANGUAGE_NONE][0]['value'] = '<p>This dataset is now maintained on the <a href="'.$dataset['HDX_URL'].'">Humanitarian Data Exchange</a>.</p>';
       $node->field_ds_files = array();
       $node->field_ds_abstract = array();
+      $node->field_languages = array();
+      $node->field_dataset_types = array();
       node_save($node);
     }
   }
