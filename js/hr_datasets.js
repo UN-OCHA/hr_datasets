@@ -15,8 +15,10 @@ Drupal.behaviors.hrDatasets = {
     search: '',
     url: function() {
       var url = 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=' + settings.hr_datasets.operation + '&rows=' + this.limit + '&start=' + this.skip;
-      if(!this.params === ''){
-        url += '&fq=' + this.params;
+      var index = window.location.hash.indexOf('=');
+      if (index != -1) {
+        var params = window.location.hash.substr(index + 1);
+        url += '&fq=' + params;
       }
       return url;
     },
