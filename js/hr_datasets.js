@@ -12,8 +12,13 @@ Drupal.behaviors.hrDatasets = {
   DatasetsList = Backbone.Collection.extend({
     model: Dataset,
     params: {},
+    search: '',
     url: function() {
-      return 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=' + settings.hr_datasets.operation + '&rows=' + this.limit + '&start=' + this.skip;
+      var url = 'https://data.hdx.rwlabs.org/api/3/action/package_search?q=' + settings.hr_datasets.operation + '&rows=' + this.limit + '&start=' + this.skip;
+      if(!this.params === ''){
+        url += '&fq=' + this.params;
+      }
+      return url;
     },
 
     parse: function(response) {
@@ -73,6 +78,11 @@ Drupal.behaviors.hrDatasets = {
           });
         },
 
+        events: {
+          'click #back': 'back',
+          'click #search-button': 'searchByTitle',
+        },
+
         page: function(page) {
           this.loading();
           this.currentPage = page;
@@ -128,6 +138,18 @@ Drupal.behaviors.hrDatasets = {
             $('#previous').attr('href', '#table/' + this.currentPage + paramsString);
           }
         },
+
+        searchByTitle: function(event) {
+          var val = $('#search').val();
+          if (val != '') {
+            this.DatasetsList.params.title = val;
+          }
+          else {
+            delete this.DatasetsList.params.title;
+          }
+          this.router.navigateWithParams('table/1', this.DatasetsList.params);
+        },
+
     });
 
     DatasetsRouter = Backbone.Router.extend({

@@ -143,7 +143,7 @@ function hr_datasets_block_view($delta = '') {
         <div class="views-exposed-widgets clearfix">
                 <div id="edit-search-wrapper" class="views-exposed-widget form-group">
         <div class="input-group">
-          <input class="form-control form-text" id="search" name="text" value="" size="30" maxlength="128" type="text" placeholder="Search Datasets by Title">
+          <input class="form-control form-text" id="search" name="datasets.title" value="" size="30" maxlength="128" type="text" placeholder="Search Datasets by Title">
           <span class="input-group-btn">
             <button id="search-button" type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
           </span>

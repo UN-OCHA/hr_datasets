@@ -79,7 +79,7 @@ function hr_datasets_iso2_to_iso3($iso2_country_code) {
     }
   }
   else {
-    drupal_set_message(t('Could not reach the countries list in country.io, please consult the site admin', 'warning'));
+    drupal_set_message(t('Could not reach the countries list on country.io, please consult the site admin.'), 'warning', false);
   }
 }
 
